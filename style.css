@@ -1,0 +1,668 @@
+:root {
+  --gradient-color: -webkit-linear-gradient(
+    113deg,
+    rgba(255, 155, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 50%,
+    rgba(255, 0, 125, 1) 100%
+  );
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  height: 15vw;
+  width: 100%;
+  background-color: rgb(48, 48, 48);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  box-shadow: 0 0 10px black;
+  z-index: 2;
+  top: 0vw;
+}
+
+.fa-magnifying-glass,
+.fa-bars,
+.fa-utensils,
+.fa-bookmark,
+.fa-pen-to-square {
+  font-size: 8vw;
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: font-size 0.25s;
+}
+
+.fa-bookmark,
+.fa-pen-to-square {
+  font-size: 6vw;
+}
+
+.active-icon {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#buttons-container {
+  display: flex;
+  justify-content: left;
+  margin-left: 5vw;
+  flex: 15%;
+}
+
+#logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 40%;
+}
+
+#logo-lettering {
+  font-size: 10vw;
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Dancing Script;
+  margin-left: 2vw;
+}
+
+#search-icon-container {
+  display: flex;
+  flex: 15%;
+  justify-content: right;
+  margin-right: 5vw;
+}
+
+.navigation-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar-container,
+#menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vw;
+  width: 100%;
+  background-color: rgb(48, 48, 48);
+  position: fixed;
+  top: 15vw;
+  z-index: 2;
+}
+
+#search-bar {
+  background-color: rgb(255, 255, 255);
+  width: 85%;
+  height: 10vw;
+  border-radius: 4vw;
+  border: none;
+  transition: border 0.25s;
+  font-size: 6vw;
+  padding: 0 2vw;
+}
+
+#search-bar:focus {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(
+        113deg,
+        rgba(255, 155, 0, 1) 0%,
+        rgba(255, 0, 0, 1) 50%,
+        rgba(255, 0, 125, 1) 100%
+      )
+      border-box;
+  border: 1vw solid transparent;
+  outline: none;
+  background-color: white;
+}
+
+.search-bar-container.hidden,
+#menu-container.hidden,
+#overlay.hidden {
+  display: none;
+}
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.651);
+  top: 0;
+  z-index: 1;
+  backdrop-filter: blur(2px);
+}
+
+.menu-label {
+  font-size: 5vw;
+  color: white;
+  margin-left: 2vw;
+}
+
+#menu-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.menu-option {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+#results-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(48, 48, 48);
+  height: 90vw;
+  width: 100%;
+  padding: 5vw 0;
+}
+
+.result {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 15vw;
+  width: 80%;
+  border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+.result:first-child {
+  border-top: 1px solid rgb(100, 100, 100);
+}
+
+#pagination-container {
+  display: flex;
+  position: fixed;
+  bottom: 5vw;
+}
+
+.page-button,
+.instructions-button {
+  color: white;
+  font-size: 4vw;
+  padding: 3vw;
+  border-radius: 10vw;
+  margin: 0 14.5vw;
+  border: 0;
+  background: var(--gradient-color);
+}
+
+.result-image {
+  width: 13vw;
+  height: 13vw;
+  border-radius: 100%;
+}
+
+.result-title {
+  font-size: 5vw;
+  color: white;
+}
+
+#recipe-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.recipe-image-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 15vw;
+  overflow: hidden;
+  height: 55vw;
+}
+
+.recipe-image {
+  width: 100%;
+}
+
+.recipe-title {
+  padding: 5vw 8vw;
+  font-size: 5.5vw;
+  color: white;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  position: absolute;
+  top: 30vw;
+  z-index: 1;
+  border-radius: 3vw;
+  max-width: 85%;
+  max-height: 50vw;
+  text-align: center;
+}
+
+.info-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 74vw;
+}
+
+.fa-circle-minus {
+  margin-left: 2vw;
+}
+
+.info-container i {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4em;
+  margin-right: 1vw;
+}
+
+.cooking-time-container,
+.servings-container,
+.servigs-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredients-title {
+  font-size: 4.5vw;
+  font-weight: 700;
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 86vw;
+}
+
+.ingredients-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 95vw;
+}
+
+.ingredient {
+  max-width: 85%;
+  text-align: center;
+}
+
+.fa-square-check {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.instructions {
+  margin-top: 10vw;
+  margin-bottom: 95vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructions-title {
+  margin-bottom: 1.5vw;
+  font-size: 4.5vw;
+  font-weight: 700;
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.instructions-description {
+  margin-bottom: 5vw;
+  text-align: center;
+}
+
+@media only screen and (min-width: 450px) {
+  header {
+    height: 10vw;
+    width: 100%;
+  }
+
+  .fa-magnifying-glass,
+  .fa-bars,
+  .fa-utensils,
+  .fa-bookmark,
+  .fa-pen-to-square {
+    font-size: 7vw;
+  }
+
+  .fa-bookmark,
+  .fa-pen-to-square {
+    font-size: 6vw;
+    margin-left: 3vw;
+  }
+
+  #logo-lettering {
+    font-size: 9vw;
+  }
+
+  .search-bar-container,
+  #menu-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vw;
+    top: 10vw;
+  }
+
+  #search-bar {
+    height: 7vw;
+    font-size: 4vw;
+  }
+
+  .menu-label {
+    font-size: 4.5vw;
+    margin-left: 1vw;
+  }
+
+  #results-container {
+    height: 65vw;
+  }
+
+  .result {
+    height: 10vw;
+  }
+
+  #pagination-container {
+    bottom: 3vw;
+  }
+
+  .result-image {
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .result-title {
+    font-size: 4vw;
+  }
+
+  .recipe-image-container {
+    top: 10vw;
+    height: 45vw;
+  }
+
+  .recipe-title {
+    padding: 4vw 7vw;
+    font-size: 4.5vw;
+    top: 25vw;
+  }
+
+  .info-container {
+    top: 58vw;
+  }
+
+  .info-container i {
+    font-size: 2.75em;
+  }
+
+  .info-container a {
+    font-size: 3.25vw;
+  }
+
+  .ingredients-title {
+    top: 68vw;
+    font-size: 4vw;
+  }
+
+  .ingredients-container {
+    top: 75vw;
+  }
+
+  .ingredients-container a {
+    font-size: 3vw;
+  }
+
+  .fa-square-check {
+    font-size: 3vw;
+  }
+
+  .instructions {
+    margin-top: 5vw;
+    margin-bottom: 70vw;
+  }
+
+  .instructions-title {
+    font-size: 4vw;
+  }
+
+  .instructions-description {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  header {
+    height: 3vw;
+  }
+
+  .fa-magnifying-glass,
+  .fa-bars,
+  .fa-utensils,
+  .fa-bookmark,
+  .fa-pen-to-square {
+    font-size: 2vw;
+  }
+
+  .fa-bookmark,
+  .fa-pen-to-square {
+    margin-left: 3vw;
+  }
+
+  #logo-lettering {
+    font-size: 3vw;
+  }
+
+  .search-bar-container.hidden {
+    display: flex;
+  }
+
+  .fa-magnifying-glass {
+    background: white;
+    -webkit-background-clip: text;
+  }
+
+  .search-bar-container {
+    height: 3vw;
+    width: 25vw;
+    background-color: rgba(255, 0, 0, 0);
+    top: 0;
+
+    left: 2vw;
+  }
+
+  #search-bar {
+    font-size: 1.25vw;
+    height: 2.5vw;
+    width: 20vw;
+    border-radius: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+
+  #search-bar-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5vw;
+    width: 5vw;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background: var(--gradient-color);
+    cursor: pointer;
+  }
+
+  #search-barr-button:hover {
+    color: red;
+  }
+
+  #search-bar:focus {
+    border: 0.25vw solid transparent;
+  }
+
+  #results-container {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 20vw;
+  }
+
+  .result {
+    height: 4vw;
+  }
+
+  #pagination-container {
+    display: flex;
+    position: fixed;
+
+    bottom: 20vw;
+    left: -2vw;
+  }
+
+  .page-button,
+  .instructions-button {
+    font-size: 1vw;
+    padding: 1vw;
+    margin: 0 3.5vw;
+  }
+
+  .result-image {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .result-title {
+    font-size: 1vw;
+  }
+
+  #recipe-container {
+    width: 77.5%;
+  }
+
+  .recipe-image-container {
+    top: 0;
+    height: 20vw;
+    overflow: hidden;
+  }
+
+  #recipe-container {
+    height: 100%;
+    width: 79vw;
+    position: absolute;
+    left: 20vw;
+  }
+
+  .recipe-title {
+    padding: 1.5vw 2vw;
+    font-size: 2vw;
+    top: 8vw;
+  }
+
+  .info-container {
+    top: 22vw;
+    justify-content: center;
+  }
+
+  .info-container i {
+    font-size: 2em;
+  }
+
+  .info-container a {
+    font-size: 1vw;
+  }
+
+  .cooking-time-container,
+  .servings-container,
+  .servigs-buttons-container {
+    margin: 0 4vw;
+  }
+
+  .fa-bookmark {
+    margin-left: 0;
+  }
+
+  .cooking-time-container {
+    margin-left: -1vw;
+  }
+
+  .ingredients-title {
+    font-size: 1.5vw;
+    top: 28vw;
+  }
+
+  .ingredients-container {
+    top: 31vw;
+    column-count: 2;
+    padding: 1vw;
+  }
+
+  .ingredients-container a {
+    font-size: 1vw;
+  }
+
+  .ingredient {
+    flex: 50%;
+  }
+
+  .fa-square-check {
+    font-size: 1vw;
+  }
+
+  .instructions {
+    margin-bottom: 3vw;
+  }
+
+  .instructions-title {
+    font-size: 1.5vw;
+  }
+
+  .instructions-description {
+    font-size: 1vw;
+    margin-bottom: 1vw;
+  }
+
+  .navigation-button .fa-magnifying-glass,
+  .navigation-button .fa-bars {
+    display: none;
+  }
+
+  #menu-container.hidden {
+    display: flex;
+    height: 3vw;
+    width: 25vw;
+    top: 0;
+    right: 0;
+  }
+
+  .menu-option a {
+    font-size: 1vw;
+  }
+  .menu-option i {
+    font-size: 1.5vw;
+  }
+}
