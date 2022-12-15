@@ -172,7 +172,8 @@ a:visited {
   display: none;
 }
 
-.blank-recipe-container {
+.blank-recipe-container,
+.error {
   text-align: center;
   position: absolute;
   width: 50%;
@@ -180,7 +181,8 @@ a:visited {
   top: 30vw;
 }
 
-.blank-recipe-container a {
+.blank-recipe-container a,
+.error a {
   font-size: 5.5vw;
   color: rgb(201, 201, 201);
 }
@@ -618,11 +620,16 @@ a:visited {
     left: 2vw;
   }
 
-  .blank-recipe-container {
+  .blank-recipe-container,
+  .error {
     top: 20vw;
   }
 
   .blank-recipe-container a {
+    font-size: 4vw;
+  }
+
+  .error a {
     font-size: 4vw;
   }
 
@@ -841,11 +848,16 @@ a:visited {
     -webkit-background-clip: text;
   }
 
-  .blank-recipe-container {
+  .blank-recipe-container,
+  .error {
     top: 15vw;
   }
 
   .blank-recipe-container a {
+    font-size: 3vw;
+  }
+
+  .error a {
     font-size: 3vw;
   }
 

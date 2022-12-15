@@ -4,6 +4,8 @@ import fracty from "fracty";
 class recipeView {
   #parentElement = document.querySelector("#recipe-container");
   #data;
+  #errorMessage =
+    "There is no recipe that you are looking for. Try another one";
 
   render(data) {
     this.#data = data;
@@ -14,6 +16,22 @@ class recipeView {
 
   #clear() {
     this.#parentElement.innerHTML = "";
+  }
+
+  addHandlerRender(handler) {
+    ["hashchange", "load"].forEach((event) =>
+      window.addEventListener(event, handler)
+    );
+  }
+
+  renderError(error = this.#errorMessage) {
+    const markup = `
+      <div class="error">
+        <a>${error}</a>
+      </div>
+    `;
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
   #generateMarkup() {

@@ -1,23 +1,36 @@
+import { API_URL } from "./config";
+import { getJSON } from "./helpers";
+
 export const state = {
   recipe: {},
 };
 
-export const loadRecipe = async function (id) {
-  const response = await fetch(
-    `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
-  );
+export async function loadRecipe(id) {
+  try {
+    const data = await getJSON(`${API_URL}${id}`);
+    const recipe = data.data.recipe;
+    state.recipe = {
+      id: recipe.id,
+      title: recipe.title,
+      author: recipe.publisher,
+      sourceUrl: recipe.source_url,
+      image: recipe.image_url,
+      servings: recipe.servings,
+      cookingTime: recipe.cooking_time,
+      ingredients: recipe.ingredients,
+    };
+  } catch (err) {
+    throw err;
+  }
+}
 
-  const data = await response.json();
-  const recipe = data.data.recipe;
+export async function loadSearchResults(query) {
+  try {
+    const data = await getJSON(`${API_URL}?search=${query}`);
+    console.log(data);
+  } catch (err) {
+    throw err;
+  }
+}
 
-  state.recipe = {
-    id: recipe.id,
-    title: recipe.title,
-    author: recipe.publisher,
-    sourceUrl: recipe.source_url,
-    image: recipe.image_url,
-    servings: recipe.servings,
-    cookingTime: recipe.cooking_time,
-    ingredients: recipe.ingredients,
-  };
-};
+loadSearchResults("pizza");
