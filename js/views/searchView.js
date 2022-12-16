@@ -2,7 +2,13 @@ class searchView {
   #parentElement = document.querySelector(".search-bar-container");
 
   getQuery() {
-    return this.#parentElement.querySelector("#search-bar").value;
+    const queryValue = this.#parentElement.querySelector("#search-bar").value;
+    this.#clearInput();
+    return queryValue;
+  }
+
+  #clearInput() {
+    this.#parentElement.querySelector("#search-bar").value = "";
   }
 
   addHandlerSearch(handler) {
