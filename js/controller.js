@@ -2,6 +2,11 @@ import * as model from "./model";
 import recipeView from "./views/recipeView";
 import pageView from "./views/pageView";
 import searchView from "./views/searchView";
+import resultsView from "./views/resultsView";
+
+if (module.hot) {
+  module.hot.accept();
+}
 
 async function ShowRecipe() {
   try {
@@ -12,7 +17,7 @@ async function ShowRecipe() {
 
     await model.loadRecipe(id);
     const recipe = model.state.recipe;
-
+    recipeView.spinner();
     recipeView.render(recipe);
   } catch (err) {
     recipeView.renderError();
@@ -24,7 +29,7 @@ async function SearchResults() {
     const query = searchView.getQuery();
     if (!query) return;
     await model.loadSearchResults(query);
-    console.log(model.state.search.results);
+    resultsView.render(model.state.search.results);
   } catch (err) {
     console.log(err);
   }
