@@ -1,10 +1,7 @@
 import * as model from "./model";
 import recipeView from "./views/recipeView";
 import pageView from "./views/pageView";
-
-function init() {
-  recipeView.addHandlerRender(ShowRecipe);
-}
+import searchView from "./views/searchView";
 
 async function ShowRecipe() {
   try {
@@ -22,5 +19,19 @@ async function ShowRecipe() {
   }
 }
 
+async function SearchResults() {
+  try {
+    const query = searchView.getQuery();
+    if (!query) return;
+    await model.loadSearchResults(query);
+    console.log(model.state.search.results);
+  } catch (err) {
+    console.log(err);
+  }
+}
+function init() {
+  recipeView.addHandlerRender(ShowRecipe);
+  searchView.addHandlerSearch(SearchResults);
+}
 pageView.pageEventListeners();
 init();
