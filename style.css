@@ -281,6 +281,10 @@ a:visited {
   border-bottom: 1px solid rgb(100, 100, 100);
 }
 
+.result:hover {
+  background-color: rgb(36, 36, 36);
+}
+
 .result:first-child {
   border-top: 1px solid rgb(100, 100, 100);
 }
