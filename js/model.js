@@ -1,4 +1,9 @@
-import { API_URL, RES_PER_PAGE } from "./config";
+import {
+  API_URL,
+  RES_PER_PAGE,
+  RES_PER_PAGE_650,
+  RES_PER_PAGE_950,
+} from "./config";
 import { getJSON } from "./helpers";
 
 export const state = {
@@ -7,7 +12,7 @@ export const state = {
     query: "",
     results: [],
     page: 1,
-    resultsPerPage: RES_PER_PAGE,
+    //resultsPerPage: RES_PER_PAGE,
   },
 };
 
@@ -50,7 +55,12 @@ export async function loadSearchResults(query) {
 
 export function getSearchResultPage(page = state.search.page) {
   state.search.page = page;
-  const start = (page - 1) * state.search.resultsPerPage;
-  const end = page * state.search.resultsPerPage;
+  let resultsPerPage = RES_PER_PAGE;
+  if (window.matchMedia("(min-width: 650px").matches)
+    resultsPerPage = RES_PER_PAGE_650;
+  if (window.matchMedia("(min-width: 950px").matches)
+    resultsPerPage = RES_PER_PAGE_950;
+  const start = (page - 1) * resultsPerPage;
+  const end = page * resultsPerPage;
   return state.search.results.slice(start, end);
 }
