@@ -271,14 +271,22 @@ a:visited {
   z-index: 2;
 }
 
+.results {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
 .result {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   min-height: 15vw;
   height: fit-content;
-  width: 80%;
+  width: 70vw;
   border-bottom: 1px solid rgb(100, 100, 100);
+  padding: 1vw;
 }
 
 .result:hover {
@@ -292,7 +300,25 @@ a:visited {
 #pagination-container {
   display: flex;
   position: fixed;
-  bottom: 5vw;
+  bottom: 15vw;
+  height: fit-content;
+}
+
+.previous-page-button,
+.next-page-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 22vw;
+}
+
+.previous-page-button {
+  left: -50vw;
+}
+
+.next-page-button {
+  left: -1vw;
 }
 
 .page-button,
@@ -307,6 +333,10 @@ a:visited {
   background: var(--gradient-color);
 }
 
+.page-button:hover {
+  cursor: pointer;
+}
+
 .result-image {
   width: 13vw;
   height: 13vw;
@@ -317,6 +347,15 @@ a:visited {
   font-size: 5vw;
   color: white;
   margin-left: 5%;
+}
+
+.result-image-container {
+  flex: 13vw;
+}
+
+.result-title-container {
+  flex: 50vw;
+  display: flex;
 }
 
 #recipe-container {
@@ -479,7 +518,6 @@ a:visited {
   .search-bar-container,
   #menu-container {
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
     height: 10vw;
     top: 10vw;
@@ -511,10 +549,25 @@ a:visited {
   .result {
     min-height: 10vw;
     height: fit-content;
+    width: 65vw;
+    padding: 0.5vw;
   }
 
   #pagination-container {
-    bottom: 3vw;
+    bottom: 13vw;
+  }
+
+  .previous-page-button,
+  .next-page-button {
+    width: 22vw;
+  }
+
+  .previous-page-button {
+    left: -47vw;
+  }
+
+  .next-page-button {
+    left: -4vw;
   }
 
   .result-image {
@@ -524,6 +577,15 @@ a:visited {
 
   .result-title {
     font-size: 4vw;
+  }
+
+  .result-image-container {
+    flex: 8vw;
+  }
+
+  .result-title-container {
+    flex: 45vw;
+    display: flex;
   }
 
   .recipe-image-container {
@@ -685,15 +747,15 @@ a:visited {
   .result {
     min-height: 6vw;
     height: fit-content;
+    width: 20vw;
   }
 
   #pagination-container {
     display: flex;
     position: fixed;
     width: 25vw;
-    justify-content: center;
     margin-left: 1.25vw;
-    top: 35vw;
+    top: 67vw;
     left: -1.2vw;
   }
 
@@ -701,8 +763,20 @@ a:visited {
   .instructions-button {
     font-size: 1.75vw;
     padding: 2vw;
-    margin: 0 1vw;
     height: 6vw;
+  }
+
+  .previous-page-button,
+  .next-page-button {
+    width: 10vw;
+  }
+
+  .previous-page-button {
+    left: 1vw;
+  }
+
+  .next-page-button {
+    left: -2vw;
   }
 
   .result-image {
@@ -712,6 +786,15 @@ a:visited {
 
   .result-title {
     font-size: 1.5vw;
+  }
+
+  .result-image-container {
+    flex: 5vw;
+  }
+
+  .result-title-container {
+    flex: 10vw;
+    display: flex;
   }
 
   #recipe-container {
@@ -914,23 +997,38 @@ a:visited {
   .result {
     min-height: 4vw;
     height: fit-content;
+    width: 16vw;
   }
 
   #pagination-container {
     display: flex;
     position: fixed;
-    justify-content: center;
-    top: 23vw;
-    left: -3.75vw;
-    width: 25vw;
+    top: 43vw;
+    width: 20vw;
   }
 
   .page-button,
   .instructions-button {
     font-size: 1vw;
     padding: 1vw;
-    margin: 0 3vw;
     height: 3vw;
+  }
+
+  .previous-page-button,
+  .next-page-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 6vw;
+  }
+
+  .previous-page-button {
+    left: 1vw;
+  }
+
+  .next-page-button {
+    left: 11vw;
   }
 
   .spinner img {
@@ -948,6 +1046,15 @@ a:visited {
     font-size: 1vw;
   }
 
+  .result-image-container {
+    flex: 3vw;
+  }
+
+  .result-title-container {
+    flex: 10vw;
+    display: flex;
+  }
+
   #recipe-container {
     width: 77.5%;
   }
@@ -958,6 +1065,9 @@ a:visited {
     overflow: hidden;
   }
 
+  .recipe-image {
+    width: 80.9vw;
+  }
   #recipe-container {
     height: 100%;
     width: 79vw;
