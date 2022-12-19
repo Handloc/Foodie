@@ -1,4 +1,5 @@
 import { TIMEOUT_SEC } from "./config";
+import { RES_PER_PAGE, RES_PER_PAGE_650, RES_PER_PAGE_950 } from "./config";
 
 function timeout(s) {
   return new Promise(function (_, reject) {
@@ -17,4 +18,13 @@ export async function getJSON(url) {
   } catch (err) {
     throw err;
   }
+}
+
+export function setResultsPerPage() {
+  let resultsPerPage = RES_PER_PAGE;
+  if (window.matchMedia("(min-width: 650px").matches)
+    resultsPerPage = RES_PER_PAGE_650;
+  if (window.matchMedia("(min-width: 950px").matches)
+    resultsPerPage = RES_PER_PAGE_950;
+  return resultsPerPage;
 }
