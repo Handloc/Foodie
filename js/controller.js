@@ -42,11 +42,17 @@ function controlPagination(goToPage) {
   paginationView.render(model.state.search);
 }
 
+function controlServings() {
+  model.updateServings();
+  recipeView.render(recipe);
+}
+
 function init() {
   recipeView.addHandlerRender(ShowRecipe);
   searchView.addHandlerSearch(SearchResults);
   paginationView.addHandlerClick(controlPagination);
   pageView.pageEventListeners();
+  controlServings();
 }
 
 init();
