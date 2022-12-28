@@ -50,6 +50,11 @@ header {
 .fa-bookmark,
 .fa-pen-to-square {
   font-size: 6vw;
+  transition: transform 0.15s;
+}
+
+.fa-bookmark:hover {
+  cursor: pointer;
 }
 
 .active-icon {
@@ -168,7 +173,8 @@ a:visited {
 .search-bar-container.hidden,
 #menu-container.hidden,
 #overlay.hidden,
-.add-recipe-modal.hidden {
+.add-recipe-modal.hidden,
+.fa-user.hidden {
   display: none;
 }
 
@@ -422,7 +428,8 @@ a:visited {
 }
 
 .fa-circle-minus:hover,
-.fa-circle-plus:hover {
+.fa-circle-plus:hover,
+.fa-bookmark:hover {
   transform: translate3d(0px, -3px, 0px);
 }
 

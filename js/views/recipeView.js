@@ -21,6 +21,14 @@ class recipeView extends View {
     });
   }
 
+  addHandlerBookmark(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      const button = e.target.closest(".fa-bookmark");
+      if (!button) return;
+      handler();
+    });
+  }
+
   _generateMarkup() {
     return `
       <div class="recipe-title">${this._data.title}</div>
@@ -43,8 +51,10 @@ class recipeView extends View {
           }"></i>
         </div>
         <div class="servings-buttons-container">
-          <i class="fa-solid fa-user"></i>
-          <i class="fa-regular fa-bookmark"></i>
+          <i class="fa-solid fa-user hidden"></i>
+          <i class="fa-${
+            this._data.bookmarked ? "solid" : "regular"
+          } fa-bookmark"></i>
         </div>
       </div>
       <div class="ingredients-title">INGREDIENTS</div>
