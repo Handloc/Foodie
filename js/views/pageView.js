@@ -5,6 +5,8 @@ const menuButton = document.querySelector(".fa-bars");
 const menuContainer = document.querySelector("#menu-container");
 const addRecipeButton = document.querySelector(".fa-pen-to-square");
 const addRecipeModal = document.querySelector(".add-recipe-modal");
+const bookmarksButton = document.querySelector(".open-bookmarks");
+const bookmarksModal = document.querySelector(".bookmarks-container");
 
 class pageView {
   pageEventListeners() {
@@ -23,6 +25,11 @@ class pageView {
       addRecipeModal.classList.toggle("hidden");
     });
 
+    bookmarksButton.parentElement.addEventListener("click", function () {
+      menuContainer.classList.toggle("hidden");
+      bookmarksModal.classList.toggle("hidden");
+    });
+
     overlay.addEventListener("click", function () {
       if (!addRecipeModal.classList.contains("hidden"))
         addRecipeModal.classList.add("hidden");
@@ -30,6 +37,8 @@ class pageView {
         searchBarContainer.classList.add("hidden");
       if (!menuContainer.classList.contains("hidden"))
         menuContainer.classList.add("hidden");
+      if (!bookmarksModal.classList.contains("hidden"))
+        bookmarksModal.classList.add("hidden");
       overlay.classList.toggle("hidden");
     });
   }

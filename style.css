@@ -174,7 +174,8 @@ a:visited {
 #menu-container.hidden,
 #overlay.hidden,
 .add-recipe-modal.hidden,
-.fa-user.hidden {
+.fa-user.hidden,
+.bookmarks-container.hidden {
   display: none;
 }
 
@@ -203,7 +204,8 @@ a:visited {
   backdrop-filter: blur(2px);
 }
 
-.add-recipe-modal {
+.add-recipe-modal,
+.bookmarks-container {
   position: absolute;
   top: 20vw;
   display: flex;
