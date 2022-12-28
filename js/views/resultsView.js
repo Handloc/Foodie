@@ -9,8 +9,10 @@ class resultsView extends View {
   }
 
   _generateMarkupResult(result) {
+    const id = window.location.hash.slice(1);
+
     return `
-    <div class="result">
+    <div class="result ${result.id === id ? "active-result" : ""}">
       <div class="result-image-container">
         <img src="${result.image}" class="result-image" />
       </div>

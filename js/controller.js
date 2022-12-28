@@ -16,6 +16,8 @@ async function ShowRecipe() {
 
     recipeView.spinner();
 
+    resultsView.update(model.getSearchResultPage());
+
     await model.loadRecipe(id);
     const recipe = model.state.recipe;
     recipeView.spinner();
