@@ -41,66 +41,60 @@
       <div class="bookmarks"></div>
     </div>
     <div class="add-recipe-modal hidden">
-      <div>
-        <a> Recipe title</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Title</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> URL</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> URL</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Image URL</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Author</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Prep time</a>
-        <input type="number" />
-      </div>
-      <div>
-        <a> Servings</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Ingredient 1</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Ingredient 2</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Ingredient 3</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Ingredient 4</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Ingredient 5</a>
-        <input type="text" />
-      </div>
-      <div>
-        <a> Ingredient 6</a>
-        <input type="text" />
-      </div>
-      <button class="add-recipe-button">
-        <i class="fa-solid fa-cloud-arrow-up"></i>
-        <a>UPLOAD</a>
-      </button>
+      <form class="upload-form">
+        <div>
+          <a> Title</a>
+          <input type="text" name="title" />
+        </div>
+        <div>
+          <a> URL</a>
+          <input type="text" name="url" />
+        </div>
+        <div>
+          <a> Image URL</a>
+          <input type="text" name="image-url" />
+        </div>
+        <div>
+          <a> Author</a>
+          <input type="text" name="author" />
+        </div>
+        <div>
+          <a> Prep time</a>
+          <input type="number" name="prep-time" />
+        </div>
+        <div>
+          <a> Servings</a>
+          <input type="text" name="servings" />
+        </div>
+        <div>
+          <a> Ingredient 1</a>
+          <input type="text" name="ingredient-1" />
+        </div>
+        <div>
+          <a> Ingredient 2</a>
+          <input type="text" name="ingredient-2" />
+        </div>
+        <div>
+          <a> Ingredient 3</a>
+          <input type="text" name="ingredient-3" />
+        </div>
+        <div>
+          <a> Ingredient 4</a>
+          <input type="text" name="ingredient-4" />
+        </div>
+        <div>
+          <a> Ingredient 5</a>
+          <input type="text" name="ingredient-5" />
+        </div>
+        <div>
+          <a> Ingredient 6</a>
+          <input type="text" name="ingredient-6" />
+        </div>
+        <button class="add-recipe-button">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <a>UPLOAD</a>
+        </button>
+      </form>
     </div>
     <form class="search-bar-container hidden">
       <input type="text" id="search-bar" placeholder="Search for recipes..." />

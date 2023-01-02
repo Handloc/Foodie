@@ -5,6 +5,7 @@ import searchView from "./views/searchView";
 import resultsView from "./views/resultsView";
 import bookmarksView from "./views/bookmarksView";
 import paginationView from "./views/paginationView";
+import addRecipeView from "./views/addRecipeView";
 
 if (module.hot) {
   module.hot.accept();
@@ -63,6 +64,10 @@ function renderBookmarks() {
   bookmarksView.render(model.state.bookmarks);
 }
 
+function addRecipe(newRecipe) {
+  console.log(newRecipe);
+}
+
 function init() {
   bookmarksView.addHandlerRender(renderBookmarks);
   recipeView.addHandlerRender(ShowRecipe);
@@ -71,6 +76,7 @@ function init() {
   searchView.addHandlerSearch(SearchResults);
   paginationView.addHandlerClick(controlPagination);
   pageView.pageEventListeners();
+  addRecipeView.addHandlerUpload(addRecipe);
 }
 
 init();
