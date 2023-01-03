@@ -58,6 +58,16 @@ export default class View {
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
+  renderMessage(message = this._message) {
+    const markup = `
+      <div class="success-message">
+        <a>${message}</a>
+      </div>
+    `;
+    this._clear();
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+  }
+
   spinner() {
     const markup = `
       <div class="spinner">
