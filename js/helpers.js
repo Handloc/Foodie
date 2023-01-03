@@ -20,6 +20,24 @@ export async function getJSON(url) {
   }
 }
 
+export async function sendJSON(url, uploadData) {
+  try {
+    const response = await Promise.race([
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(uploadData),
+      }),
+      timeout(TIMEOUT_SEC),
+    ]);
+    const data = await response.json();
+
+    return data;
+  } catch (err) {
+    throw err;
+  }
+}
+
 export function setResultsPerPage() {
   let resultsPerPage = RES_PER_PAGE;
   if (window.matchMedia("(min-width: 650px").matches)

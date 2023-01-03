@@ -6,6 +6,7 @@ import resultsView from "./views/resultsView";
 import bookmarksView from "./views/bookmarksView";
 import paginationView from "./views/paginationView";
 import addRecipeView from "./views/addRecipeView";
+import { MODAL_CLOSE_SEC } from "./config";
 
 if (module.hot) {
   module.hot.accept();
@@ -64,8 +65,20 @@ function renderBookmarks() {
   bookmarksView.render(model.state.bookmarks);
 }
 
-function addRecipe(newRecipe) {
-  console.log(newRecipe);
+async function addRecipe(newRecipe) {
+  try {
+    addRecipeView.spinner();
+    await model.uploadRecipe(newRecipe);
+    console.log(model.state.recipe);
+    recipeView.render(model.state.recipe);
+    addRecipeView.renderMessage();
+    setTimeout(function () {
+      addRecipeView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
+  } catch (err) {
+    console.error(err);
+    addRecipeView.renderError(err.message);
+  }
 }
 
 function init() {
