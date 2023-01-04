@@ -51,7 +51,7 @@ class recipeView extends View {
           }"></i>
         </div>
         <div class="servings-buttons-container">
-          <i class="fa-solid fa-user hidden"></i>
+          <i class="fa-solid fa-user ${this._data.key ? "" : "hidden"}"></i>
           <i class="fa-${
             this._data.bookmarked ? "solid" : "regular"
           } fa-bookmark"></i>
