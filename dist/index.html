@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.574c7455.css">
+    <script defer="" src="/index.850bd9e5.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <script src="https://kit.fontawesome.com/f1d50ed54d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Foodie</title>
+  </head>
+  <body>
+    <header>
+      <div id="buttons-container">
+        <button class="navigation-button">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div id="logo-container">
+        <i class="fa-solid fa-utensils"></i>
+        <a id="logo-lettering">Foodie</a>
+      </div>
+      <div id="search-icon-container">
+        <button class="navigation-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </header>
+    <div class="bookmarks-container hidden">
+      <div class="bookmarks"></div>
+    </div>
+    <div class="add-recipe-modal hidden">
+      <form class="upload-form">
+        <div>
+          <a> Title</a>
+          <input type="text" name="title" placeholder="Title">
+        </div>
+        <div>
+          <a> URL</a>
+          <input type="text" name="sourceUrl" placeholder="URL">
+        </div>
+        <div>
+          <a> Image URL</a>
+          <input type="text" name="image" placeholder="Image URL">
+        </div>
+        <div>
+          <a> Author</a>
+          <input type="text" name="publisher" placeholder="Author">
+        </div>
+        <div>
+          <a> Prep time</a>
+          <input type="number" name="cookingTime" placeholder="Cooking time">
+        </div>
+        <div>
+          <a> Servings</a>
+          <input type="text" name="servings" placeholder="Servings">
+        </div>
+        <div>
+          <a> Ingredient 1</a>
+          <input type="text" name="ingredient-1" placeholder="Ingredient - quantity, unit, description">
+        </div>
+        <div>
+          <a> Ingredient 2</a>
+          <input type="text" name="ingredient-2" placeholder="Ingredient - quantity, unit, description">
+        </div>
+        <div>
+          <a> Ingredient 3</a>
+          <input type="text" name="ingredient-3" placeholder="Ingredient - quantity, unit, description">
+        </div>
+        <div>
+          <a> Ingredient 4</a>
+          <input type="text" name="ingredient-4" placeholder="Ingredient - quantity, unit, description">
+        </div>
+        <div>
+          <a> Ingredient 5</a>
+          <input type="text" name="ingredient-5" placeholder="Ingredient - quantity, unit, description">
+        </div>
+        <div>
+          <a> Ingredient 6</a>
+          <input type="text" name="ingredient-6" placeholder="Ingredient - quantity, unit, description">
+        </div>
+        <button class="add-recipe-button">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <a>UPLOAD</a>
+        </button>
+      </form>
+    </div>
+    <form class="search-bar-container hidden">
+      <input type="text" id="search-bar" placeholder="Search for recipes...">
+      <button id="search-bar-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+    <div class="menu-container hidden">
+      <div class="menu-option">
+        <i class="fa-solid fa-bookmark open-bookmarks"></i>
+        <a class="menu-label">Bookmarks</a>
+      </div>
+      <div class="menu-option">
+        <i class="fa-regular fa-pen-to-square"></i>
+        <a class="menu-label">Add recipe</a>
+      </div>
+    </div>
+
+    <div id="recipe-container">
+      <div class="blank-recipe-container">
+        <a>Start by searching for a recipe</a>
+      </div>
+    </div>
+    <div id="results-container">
+      <div class="results"></div>
+      <div id="pagination-container"></div>
+    </div>
+
+    <div id="overlay" class="hidden"></div>
+  </body>
+</html>
