@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="scss/main.scss" />
     <script type="module" defer src="js/controller.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,51 +44,75 @@
       <form class="upload-form">
         <div>
           <a> Title</a>
-          <input type="text" name="title" />
+          <input type="text" name="title" placeholder="Title" />
         </div>
         <div>
           <a> URL</a>
-          <input type="text" name="sourceUrl" />
+          <input type="text" name="sourceUrl" placeholder="URL" />
         </div>
         <div>
           <a> Image URL</a>
-          <input type="text" name="image" />
+          <input type="text" name="image" placeholder="Image URL" />
         </div>
         <div>
           <a> Author</a>
-          <input type="text" name="publisher" />
+          <input type="text" name="publisher" placeholder="Author" />
         </div>
         <div>
           <a> Prep time</a>
-          <input type="number" name="cookingTime" />
+          <input type="number" name="cookingTime" placeholder="Cooking time" />
         </div>
         <div>
           <a> Servings</a>
-          <input type="text" name="servings" />
+          <input type="text" name="servings" placeholder="Servings" />
         </div>
         <div>
           <a> Ingredient 1</a>
-          <input type="text" name="ingredient-1" />
+          <input
+            type="text"
+            name="ingredient-1"
+            placeholder="Ingredient - quantity, unit, description"
+          />
         </div>
         <div>
           <a> Ingredient 2</a>
-          <input type="text" name="ingredient-2" />
+          <input
+            type="text"
+            name="ingredient-2"
+            placeholder="Ingredient - quantity, unit, description"
+          />
         </div>
         <div>
           <a> Ingredient 3</a>
-          <input type="text" name="ingredient-3" />
+          <input
+            type="text"
+            name="ingredient-3"
+            placeholder="Ingredient - quantity, unit, description"
+          />
         </div>
         <div>
           <a> Ingredient 4</a>
-          <input type="text" name="ingredient-4" />
+          <input
+            type="text"
+            name="ingredient-4"
+            placeholder="Ingredient - quantity, unit, description"
+          />
         </div>
         <div>
           <a> Ingredient 5</a>
-          <input type="text" name="ingredient-5" />
+          <input
+            type="text"
+            name="ingredient-5"
+            placeholder="Ingredient - quantity, unit, description"
+          />
         </div>
         <div>
           <a> Ingredient 6</a>
-          <input type="text" name="ingredient-6" />
+          <input
+            type="text"
+            name="ingredient-6"
+            placeholder="Ingredient - quantity, unit, description"
+          />
         </div>
         <button class="add-recipe-button">
           <i class="fa-solid fa-cloud-arrow-up"></i>
@@ -102,7 +126,7 @@
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
     </form>
-    <div id="menu-container" class="hidden">
+    <div class="menu-container hidden">
       <div class="menu-option">
         <i class="fa-solid fa-bookmark open-bookmarks"></i>
         <a class="menu-label">Bookmarks</a>
