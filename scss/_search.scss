@@ -1,0 +1,36 @@
+.search-bar-container {
+  @include flex-default;
+
+  #search-bar {
+    font-size: 1.5rem;
+    height: 11vw;
+    width: 60vw;
+    border: none;
+    border-top-left-radius: 10vw;
+    border-bottom-left-radius: 10vw;
+    padding: 0 2vw;
+    @include transition-ease;
+
+    &:focus {
+      background: linear-gradient(white, white) padding-box, $gradient-color;
+      border: 0.75vw solid transparent;
+      outline: none;
+    }
+  }
+
+  #search-bar-button {
+    height: 11vw;
+    width: 15vw;
+    border: none;
+    border-top-right-radius: 10vw;
+    border-bottom-right-radius: 10vw;
+    background: $gradient-color;
+    cursor: pointer;
+
+    .fa-magnifying-glass {
+      color: white;
+      -webkit-background-clip: text;
+      font-size: 1.75rem;
+    }
+  }
+}

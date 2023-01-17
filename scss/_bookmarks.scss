@@ -1,0 +1,20 @@
+.bookmarks-container {
+  position: absolute;
+  top: 20vw;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: fit-content;
+  padding: 5vw;
+  background-color: rgb(48, 48, 48);
+  z-index: 4;
+
+  @include result;
+
+  &.hidden {
+    display: none;
+  }
+}

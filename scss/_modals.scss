@@ -1,0 +1,66 @@
+.add-recipe-modal {
+  position: absolute;
+  top: 20vw;
+  width: 90%;
+  height: fit-content;
+  padding: 5vw 0vw;
+  background-color: rgb(48, 48, 48);
+  z-index: 4;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      display: none;
+    }
+
+    input {
+      text-align: center;
+      font-size: 1rem;
+      width: 75vw;
+      height: 10vw;
+      border-radius: 1.5vw;
+      border: none;
+      padding: 2vw;
+      margin-bottom: 3vw;
+
+      &:focus {
+        background: linear-gradient(white, white) padding-box, $gradient-color;
+        border: 0.75vw solid transparent;
+        outline: none;
+      }
+    }
+  }
+
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .add-recipe-button {
+      width: 33vw;
+      color: white;
+      font-size: 1.15rem;
+      padding: 3vw;
+      border-radius: 10vw;
+      border: 0;
+      background: $gradient-color;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.bookmarks-container {
+  &.hidden {
+    display: none;
+  }
+}

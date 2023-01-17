@@ -1,0 +1,36 @@
+.search-bar-container,
+.menu-container {
+  @include flex-default;
+  justify-content: space-around;
+  height: 15vw;
+  width: 100%;
+  background-color: rgb(48, 48, 48);
+  position: fixed;
+  top: 15vw;
+  z-index: 5;
+
+  &.hidden {
+    display: none;
+  }
+
+  .menu-option {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    .fa-bookmark,
+    .fa-pen-to-square {
+      font-size: 1.5rem;
+      background: $gradient-color;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @include transition-ease;
+    }
+
+    .menu-label {
+      font-size: 1.25rem;
+      color: white;
+      margin-left: 2vw;
+    }
+  }
+}

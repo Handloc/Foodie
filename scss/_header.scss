@@ -1,0 +1,41 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 15vw;
+  width: 100%;
+  background-color: rgb(48, 48, 48);
+  box-shadow: 0 0 10px black;
+  z-index: 5;
+  position: fixed;
+  top: 0vw;
+
+  #logo-container {
+    @include flex-default;
+
+    #logo-lettering {
+      font-size: 10vw;
+      background: $gradient-color;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: Dancing Script;
+      margin-left: 2vw;
+    }
+  }
+
+  .navigation-button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+  }
+
+  .fa-bars,
+  .fa-utensils,
+  .fa-magnifying-glass {
+    font-size: 8vw;
+    background: $gradient-color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include transition-ease;
+  }
+}
