@@ -1,0 +1,26 @@
+{
+  "name": "foodie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Handloc/Foodie.git"
+  },
+  "author": "Maciej Handke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Handloc/Foodie/issues"
+  },
+  "homepage": "https://github.com/Handloc/Foodie#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.0",
+    "parcel": "^2.8.0"
+  },
+  "dependencies": {
+    "fracty": "^1.0.11"
+  }
+}
