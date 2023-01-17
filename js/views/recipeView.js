@@ -71,10 +71,10 @@ class recipeView extends View {
             }</b>. <br />Check out
             directions at their website.
           </div>
-          <div class="instructions-button">
-            <a href="${
-              this._data.sourceUrl
-            }">DIRECTIONS</a> <i class="fa-solid fa-arrow-right"></i>
+          <div class="instructions-button" onclick="window.location='${
+            this._data.sourceUrl
+          }'">
+            <a>DIRECTIONS</a> <i class="fa-solid fa-arrow-right"></i>
           </div>
         </div>
       </div>
